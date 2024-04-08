@@ -26,3 +26,7 @@ Jupyterlabを起動する場合
 -----
 1. make RUN-CONSOLE
 
+NOTES
+=====
+ベースのOSやCUDAバージョンは下記から適切なものを選んで編集すると良い。
+https://hub.docker.com/r/nvidia/cuda/
