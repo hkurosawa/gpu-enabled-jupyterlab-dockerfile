@@ -1,4 +1,4 @@
-IMAGE_NAME := gpu-enabled-jupyterlab-cuda11.6.2-base-ubuntu20.04
+IMAGE_NAME := gpu-enabled-jupyterlab-cuda12.4.0-runtime-ubuntu22.04
 
 IMAGE:
 	docker build --no-cache -t $(IMAGE_NAME) .
