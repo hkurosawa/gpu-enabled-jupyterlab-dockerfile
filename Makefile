@@ -1,4 +1,4 @@
-IMAGE_NAME = gpu-enabled-ubuntu-20.04-jupyterlab-base
+IMAGE_NAME = gpu-enabled-jupyterlab-cuda12.4.0-runtime-ubuntu22.04
 NOTEBOOK_DIR_NAME = notebook
 DATA_DIR_NAME = data
 
@@ -15,4 +15,4 @@ RUN-CONSOLE:
 	docker run -it --rm --gpus all -p 8888:8888 $(IMAGE_NAME)
 
 RUN-JUPYTERLAB: notebook data
-	docker run --rm -it --gpus all -p 8888:8888 --mount type=bind,src="$(shell pwd)/$(NOTEBOOK_DIR_NAME)",dst=/$(NOTEBOOK_DIR_NAME) --mount type=bind,src="$(shell pwd)/$(DATA_DIR_NAME)",dst=/$(DATA_DIR_NAME) $(IMAGE_NAME) jupyter-lab --allow-root --ip=* --notebook-dir=/notebook/
+	docker run --rm -it --gpus all -p 8888:8888 --mount type=bind,src="$(shell pwd)/$(NOTEBOOK_DIR_NAME)",dst=/$(NOTEBOOK_DIR_NAME) --mount type=bind,src="$(shell pwd)/$(DATA_DIR_NAME)",dst=/$(DATA_DIR_NAME) $(IMAGE_NAME) jupyter-lab --allow-root --ip=* --notebook-dir=/$(NOTEBOOK_DIR_NAME)
