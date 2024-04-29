@@ -13,5 +13,6 @@ RUN update-alternatives --install /usr/bin/python python /usr/bin/python3 1
 COPY ./requirements.txt /tmp
 RUN pip install -r /tmp/requirements.txt
 
-RUN mkdir src
+#RUN mkdir src
 RUN mkdir notebook
+RUN mkdir data
