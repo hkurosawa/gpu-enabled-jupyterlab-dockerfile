@@ -14,5 +14,5 @@ $(DATA_DIR_NAME):
 RUN-CONSOLE:
 	docker run -it --rm --gpus all -p 8888:8888 $(IMAGE_NAME)
 
-RUN-JUPYTERLAB: notebook data
+RUN-JUPYTERLAB: $(NOTEBOOK_DIR_NAME) $(DATA_DIR_NAME)
 	docker run --rm -it --gpus all -p 8888:8888 --mount type=bind,src="$(shell pwd)/$(NOTEBOOK_DIR_NAME)",dst=/$(NOTEBOOK_DIR_NAME) --mount type=bind,src="$(shell pwd)/$(DATA_DIR_NAME)",dst=/$(DATA_DIR_NAME) $(IMAGE_NAME) jupyter-lab --allow-root --ip=* --notebook-dir=/$(NOTEBOOK_DIR_NAME)
