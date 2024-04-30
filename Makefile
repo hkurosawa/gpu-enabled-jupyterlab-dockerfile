@@ -1,4 +1,4 @@
-IMAGE_NAME = gpu-enabled-jupyterlab-cuda12.4.0-runtime-ubuntu22.04
+IMAGE_NAME = gpu-enabled-jupyterlab-cuda11.8.0-runtime-ubuntu20.04
 NOTEBOOK_DIR_NAME = notebook
 DATA_DIR_NAME = data
 
